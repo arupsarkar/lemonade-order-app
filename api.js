@@ -23,15 +23,13 @@ router.get('/getAccounts', (req, res, next) => {
   pool.connect(function (err, conn, done){
     // watch for any connect issues
     if (err) console.log(err);
-    conn.query('SELECT Id, Name, Loyalty_Points__c from salesforce.Account',
+    conn.query('SELECT Id, sfid, name, loyalty_points__c from salesforce.Account',
       function(err, result) {
         done();
         if (err) {
           res.status(400).json({error: err.message});
         } else {
-          // this will still cause jquery to display 'Record updated!'
-          // eventhough it was inserted
-          res.json(result);
+          res.json(result.rows);
         }
       }
     );
@@ -39,13 +37,21 @@ router.get('/getAccounts', (req, res, next) => {
 });
 
 router.post('/submitOrders', (req, res, next) => {
-  try{
-    console.log('Success: API Debug submitOrders() ', JSON.stringify(res));
-    res.status(200).json({'success': 'Data saved.'})
-  }catch (err) {
-    console.log('Error: API Debug submitOrders() ', JSON.stringify(err));
-    res.status(400).json(err)
-  }
+  pool.connect(function (err, conn, done){
+    // watch for any connect issues
+    if (err) console.log(err);
+    conn.query('INSERT INTO salesforce.Drink_Order__c (Account__c, Flavor__c, Size__c, Price__c) VALUES ($1, $2, $3, $4)',
+      [req.body.sfid.trim(), req.body.flavor.trim(), req.body.size.trim(), req.body.price.trim()],
+      function(err, result) {
+        done();
+        if (err) {
+          res.status(400).json({error: err.message});
+        } else {
+          res.json(result);
+        }
+      }
+    );
+  })
 });
 
 module.exports = router;
