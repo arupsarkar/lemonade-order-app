@@ -18,15 +18,18 @@ app.use(session(
     saveUninitialized: true
   }
 ));
-
+// Set our api routes
+// Get our API routes
+const api = require('./api');
+app.use('/api', api);
 // Parsers for POST data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use(express.static(__dirname + '/dist/lemonade-order-app'));
-app.get('/*', function(req,res) {
-  res.sendFile(path.join(__dirname+'/dist/lemonade-order-app/index.html'));
-});
+// app.use(express.static(__dirname + '/dist/lemonade-order-app'));
+// app.get('/*', function(req,res) {
+//   res.sendFile(path.join(__dirname+'/dist/lemonade-order-app/index.html'));
+// });
 
 server.listen(port, () => console.log(`API running on localhost:${port}`));
 
