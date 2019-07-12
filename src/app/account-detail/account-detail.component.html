@@ -1,0 +1,17 @@
+<div *ngIf="account">
+
+  <h2>{{account.name | uppercase}} Order your lemonade</h2>
+  <div><span>id: </span>{{account.id}}</div>
+  <div>
+    <label>Flavor:
+      <input [(ngModel)]="account.flavor" placeholder="flavor"/>
+    </label>
+    <label>Size:
+      <input [(ngModel)]="account.size" placeholder="size"/>
+    </label>
+    <label>Price:
+      <input [(ngModel)]="account.price" placeholder="price"/>
+    </label>
+  </div>
+  <button (click)="save()">save</button>
+</div>

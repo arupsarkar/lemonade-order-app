@@ -1,0 +1,15 @@
+<h2>Accounts</h2>
+
+
+<ul class="accounts">
+  <li *ngFor="let account of accounts"
+      [class.selected]="account === selectedAccount"
+      (click)="onSelect(account)">
+    <span class="badge">{{account.id}}</span> {{account.name}}
+    <span>{{account.loyalty_points}}</span>
+  </li>
+</ul>
+
+<app-account-detail [account]="selectedAccount"></app-account-detail>
+
+

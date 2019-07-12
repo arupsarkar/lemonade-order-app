@@ -1,27 +1,24 @@
-# LemonadeOrderApp
+# Lemonade Loyalty and Order App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
+**Warning - under active development**
 
-## Development server
+This is a simple application that can be used to sync (and then view) data from Salesforce using Heroku Connect.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+It supports a Getting Started article on Heroku Dev Center that shows how to set up and manage an app without requiring you to install any development tools.
 
-## Code scaffolding
+# Deploy
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The easiest way to deploy this is to push the button:
 
-## Build
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+# Verified
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+If you are not yet a Heroku verified account holder, clicking the Heroku button will prompt you to sign up for Heroku first, and enter billing details.  These details are required for abuse prevention - running this app in the standard configuration won't incur any costs.
 
-## Running end-to-end tests
+# Running
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+After you verify your Heroku account, clicking the Heroku button will create an app, a database, and a demo instance of Heroku Connect.  Following the resulting link will guide you through final configuration in the Heroku Connect UI.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Please make sure that you are in the intended Heroku app context, as you may not be defaulted to the new Heroku Connect app if you have multiple instances already running.
