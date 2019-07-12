@@ -26,10 +26,10 @@ app.use('/api', api);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-// app.use(express.static(__dirname + '/dist/lemonade-order-app'));
-// app.get('/*', function(req,res) {
-//   res.sendFile(path.join(__dirname+'/dist/lemonade-order-app/index.html'));
-// });
+app.use(express.static(__dirname + '/dist/lemonade-order-app'));
+app.get('/*', function(req,res) {
+  res.sendFile(path.join(__dirname+'/dist/lemonade-order-app/index.html'));
+});
 
 server.listen(port, () => console.log(`API running on localhost:${port}`));
 

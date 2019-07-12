@@ -15,7 +15,7 @@ const httpOptions = {
 })
 export class AccountService {
 
-  private accountsUrl = 'api/accounts';  // URL to web api
+  private accountsUrl = 'api/getAccounts';  // URL to web api
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
