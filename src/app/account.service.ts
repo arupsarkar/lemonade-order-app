@@ -16,6 +16,7 @@ const httpOptions = {
 export class AccountService {
 
   private accountsUrl = 'api/getAccounts';  // URL to web api
+  private ordersUrl = 'api/submitOrders';
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
@@ -30,7 +31,7 @@ export class AccountService {
 
   /** PUT: update the hero on the server */
   updateAccount (account: Account): Observable<any> {
-    return this.http.put(this.accountsUrl, account, httpOptions).pipe(
+    return this.http.put(this.ordersUrl, account, httpOptions).pipe(
       tap(_ => this.log(`updated account id=${account.id}`)),
       catchError(this.handleError<any>('updateAccount'))
     );
