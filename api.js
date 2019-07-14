@@ -29,6 +29,7 @@ router.get('/getAccounts', (req, res, next) => {
         if (err) {
           res.status(400).json({error: err.message});
         } else {
+          console.log(JSON.stringify(result.rows));
           res.json(result.rows);
         }
       }
@@ -37,6 +38,7 @@ router.get('/getAccounts', (req, res, next) => {
 });
 
 router.post('/submitOrders', (req, res, next) => {
+  console.log(JSON.stringify(req.body));
   pool.connect(function (err, conn, done){
     // watch for any connect issues
     if (err) console.log(err);
