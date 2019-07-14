@@ -1,7 +1,8 @@
 export class Account {
   id: string;
   name: string;
-  loyalty_points: number;
+  sfid: string;
+  loyalty_points__c: number;
   flavor: string;
   size: string;
   price: number;

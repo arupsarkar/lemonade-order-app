@@ -29,13 +29,22 @@ export class AccountService {
       );
   }
 
-  /** PUT: update the hero on the server */
-  updateAccount (account: Account): Observable<any> {
-    return this.http.put(this.ordersUrl, account, httpOptions).pipe(
-      tap(_ => this.log(`updated account id=${account.id}`)),
-      catchError(this.handleError<any>('updateAccount'))
+  /** POST: add a new hero to the server */
+  addOrder (account: Account): Observable<Account> {
+    return this.http.post<Account>(this.ordersUrl, account, httpOptions).pipe(
+      tap((newAccount: Account) => this.log(`added order w/ id=${newAccount.id}`)),
+      catchError(this.handleError<Account>('addOrder'))
     );
   }
+
+  //
+  // /** PUT: update the hero on the server */
+  // updateAccount (account: Account): Observable<any> {
+  //   return this.http.put(this.ordersUrl, account, httpOptions).pipe(
+  //     tap(_ => this.log(`updated account id=${account.id}`)),
+  //     catchError(this.handleError<any>('updateAccount'))
+  //   );
+  // }
 
   /**
    * Handle Http operation that failed.

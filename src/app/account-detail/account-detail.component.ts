@@ -9,13 +9,13 @@ import {AccountService} from '../account.service';
 })
 export class AccountDetailComponent implements OnInit {
   @Input() account: Account;
-  constructor(private accountService: AccountService,) { }
+  constructor(private accountService: AccountService) { }
 
   ngOnInit() {
   }
 
   save(): void {
-    this.accountService.updateAccount(this.account)
+    this.accountService.addOrder(this.account)
       .subscribe(() => console.log('Account Updated'));
   }
 
