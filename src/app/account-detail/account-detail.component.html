@@ -7,21 +7,28 @@
     <mat-form-field appearance="outline">
       <mat-label>Flavor</mat-label>
       <label>
-        <input [(ngModel)]="account.flavor" matInput placeholder="Flavor">
+        <input [(ngModel)]="account.flavor" matInput placeholder="Roasted Peach, Blackberry Mint">
       </label>
       <mat-hint>Flavor</mat-hint>
     </mat-form-field>
 
-<!--    <label>Flavor:-->
-<!--      <input [(ngModel)]="account.flavor" placeholder="flavor"/>-->
-<!--    </label>-->
-    <label>Size:
-      <input [(ngModel)]="account.size" placeholder="size"/>
-    </label>
-    <label>Price:
-      <input [(ngModel)]="account.price" placeholder="price"/>
-    </label>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Size</mat-label>
+      <label>
+        <input [(ngModel)]="account.size" matInput placeholder="Small, Medium, Large">
+      </label>
+      <mat-hint>Size</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Price</mat-label>
+      <label>
+        <input [(ngModel)]="account.price" matInput placeholder="Price">
+      </label>
+      <mat-hint>Price</mat-hint>
+    </mat-form-field>
+
   </div>
-<!--  <button (click)="save()">save</button>-->
   <button mat-flat-button color="primary" (click)="save()">Save</button>
 </div>
