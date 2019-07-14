@@ -3,9 +3,18 @@
   <h2>{{account.name | uppercase}} Order your lemonade</h2>
   <div><span>id: </span>{{account.id}}</div>
   <div>
-    <label>Flavor:
-      <input [(ngModel)]="account.flavor" placeholder="flavor"/>
-    </label>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Flavor</mat-label>
+      <label>
+        <input [(ngModel)]="account.flavor" matInput placeholder="Flavor">
+      </label>
+      <mat-hint>Flavor</mat-hint>
+    </mat-form-field>
+
+<!--    <label>Flavor:-->
+<!--      <input [(ngModel)]="account.flavor" placeholder="flavor"/>-->
+<!--    </label>-->
     <label>Size:
       <input [(ngModel)]="account.size" placeholder="size"/>
     </label>
@@ -13,5 +22,6 @@
       <input [(ngModel)]="account.price" placeholder="price"/>
     </label>
   </div>
-  <button (click)="save()">save</button>
+<!--  <button (click)="save()">save</button>-->
+  <button mat-flat-button color="primary" (click)="save()">Save</button>
 </div>
