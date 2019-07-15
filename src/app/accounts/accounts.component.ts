@@ -17,10 +17,14 @@ export class AccountsComponent implements OnInit {
   constructor(private accountService: AccountService) { }
 
   ngOnInit() {
+    console.log('---> Fetching accounts : Start');
     this.getAccounts();
+    console.log('---> Fetching accounts : End');
   }
   onSelect(account: Account): void {
+    console.log('---> selectedAccount : Start');
     this.selectedAccount = account;
+    console.log('---> selectedAccount : End');
   }
 
   getAccounts(): void {
@@ -29,12 +33,15 @@ export class AccountsComponent implements OnInit {
   }
 
   async refreshAccounts(val: string) {
+    console.log('---> refreshAccounts : Start');
     console.log(val);
     await this.delay(5000);
     this.getAccounts();
+    console.log('---> refreshAccounts : End');
   }
 
   private delay(ms: number) {
+    console.log('---> delay : Start');
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 

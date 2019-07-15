@@ -6,7 +6,7 @@
       [class.selected]="account === selectedAccount"
       (click)="onSelect(account)">
     <span class="badge">{{account.id}}</span> {{account.name}}
-    <span>{{account.loyalty_points__c | number}}</span>
+    <span>{{account.loyalty_points__c | number: '1.0-0'}}</span>
   </li>
 </ul>
 
