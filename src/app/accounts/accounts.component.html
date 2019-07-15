@@ -6,10 +6,10 @@
       [class.selected]="account === selectedAccount"
       (click)="onSelect(account)">
     <span class="badge">{{account.id}}</span> {{account.name}}
-    <span>{{account.loyalty_points__c}}</span>
+    <span>{{account.loyalty_points__c | number}}</span>
   </li>
 </ul>
 
-<app-account-detail [account]="selectedAccount"></app-account-detail>
+<app-account-detail [account]="selectedAccount" (refreshAccounts)="refreshAccounts($event)"></app-account-detail>
 
 

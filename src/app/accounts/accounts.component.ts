@@ -27,4 +27,15 @@ export class AccountsComponent implements OnInit {
     this.accountService.getAccounts()
       .subscribe(accounts => this.accounts = accounts);
   }
+
+  private async refreshAccounts(val: string) {
+    console.log(val);
+    await this.delay(5000);
+    this.getAccounts();
+  }
+
+  private delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
 }

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Account} from '../Account';
 import {AccountService} from '../account.service';
 
@@ -9,6 +9,7 @@ import {AccountService} from '../account.service';
 })
 export class AccountDetailComponent implements OnInit {
   @Input() account: Account;
+  @Output() refreshAccounts: EventEmitter<string> = new EventEmitter<string>();
   constructor(private accountService: AccountService) { }
 
   ngOnInit() {
@@ -17,6 +18,7 @@ export class AccountDetailComponent implements OnInit {
   save(): void {
     this.accountService.addOrder(this.account)
       .subscribe(() => console.log('Account Updated'));
+    this.refreshAccounts.emit('RefreshAccount');
   }
 
 }
