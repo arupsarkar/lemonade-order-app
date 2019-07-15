@@ -28,7 +28,7 @@ export class AccountsComponent implements OnInit {
       .subscribe(accounts => this.accounts = accounts);
   }
 
-  private async refreshAccounts(val: string) {
+  async refreshAccounts(val: string) {
     console.log(val);
     await this.delay(5000);
     this.getAccounts();
