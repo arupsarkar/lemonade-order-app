@@ -32,7 +32,7 @@ export class AccountService {
   /** POST: add a new hero to the server */
   addOrder (account: Account): Observable<Account> {
     return this.http.post<Account>(this.ordersUrl, account, httpOptions).pipe(
-      tap((newAccount: Account) => this.log(`added order w/ id=${newAccount.id}`)),
+      tap((newAccount: Account) => this.log(`added order, account list will refresh in 5 secs.`)),
       catchError(this.handleError<Account>('addOrder'))
     );
   }
