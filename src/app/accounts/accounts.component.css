@@ -46,3 +46,12 @@
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 }
+
+body{
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+.container{
+  width: 80%;
+  margin: 0 auto; /* Center the DIV horizontally */
+}

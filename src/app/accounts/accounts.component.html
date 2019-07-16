@@ -1,15 +1,23 @@
-<h2>Accounts</h2>
+
+<body>
+
+  <div class="container">
+    <h2>Accounts</h2>
 
 
-<ul class="accounts">
-  <li *ngFor="let account of accounts"
-      [class.selected]="account === selectedAccount"
-      (click)="onSelect(account)">
-    <span class="badge">{{account.id}}</span> {{account.name}}
-    <span>{{account.loyalty_points__c | number: '1.0-0'}}</span>
-  </li>
-</ul>
+    <ul class="accounts">
+      <li *ngFor="let account of accounts"
+          [class.selected]="account === selectedAccount"
+          (click)="onSelect(account)">
+        <span class="badge">{{account.id}}</span> {{account.name}}
+        <span>{{account.loyalty_points__c | number: '1.0-0'}}</span>
+      </li>
+    </ul>
 
-<app-account-detail [account]="selectedAccount" (refreshAccounts)="refreshAccounts($event)"></app-account-detail>
+    <app-account-detail [account]="selectedAccount" (refreshAccounts)="refreshAccounts($event)"></app-account-detail>
+  </div>
+
+</body>
+
 
 
